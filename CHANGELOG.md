@@ -1,3 +1,7 @@
+## 1.0.1
+
+* Change description.
+
 ## 1.0.0
 
 * Added description for this package use and information how to use with example.
