@@ -15,7 +15,7 @@ class BaseScaffold extends StatefulWidget {
 
   final Color scaffoldBackgroundColor;
   final Color toolbarBackgroundColor;
-  final Color backgroundColor;
+  final Color bodyBackgroundColor;
 
   // Toolbar
   final toolbarLeftIcon;
@@ -49,7 +49,7 @@ class BaseScaffold extends StatefulWidget {
     this.toolbarLeftTextClick,
     this.screenLoaderView,
     this.backgroundScreenLoaderView,
-    this.backgroundColor = Colors.white,
+    this.bodyBackgroundColor = Colors.white,
     this.scaffoldBackgroundColor = Colors.white,
     this.toolbarBackgroundColor = Colors.white,
   });
@@ -75,7 +75,7 @@ class _BaseScaffoldState extends State<BaseScaffold> {
         toolbar(),
         Expanded(
           child: Container(
-            color: widget.backgroundColor,
+            color: widget.bodyBackgroundColor,
             child: widget.isScreenLoading
                 ? loadingView()
                 : Stack(

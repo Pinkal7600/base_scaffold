@@ -1,10 +1,10 @@
 name: base_scaffold
-description: A Flutter package for base scaffold.
+description: A Flutter package for base scaffold. After importing this plugin to your project as usual, import base_scaffold.dart and use the BaseScaffold() for ready feature like toolbar, loaderView and etc....
 homepage: https://github.com/Pinkal7600/base_scaffold
 authors:
   - Pinkal Patel <pinkaljpael1995@gmail.com>
 
-version: 0.0.2
+version: 1.0.0
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
