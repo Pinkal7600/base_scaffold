@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'app_toolbar.dart';
+import 'base_toolbar.dart';
 
 class BaseScaffold extends StatefulWidget {
   final Widget body;
@@ -95,7 +95,7 @@ class _BaseScaffoldState extends State<BaseScaffold> {
   Widget toolbar() => widget.toolbar != null
       ? widget.toolbar
       : widget.showToolbar
-      ? AppToolbar(
+      ? BaseToolbar(
     leftIconType: widget.toolbarLeftIconType,
     leftIcon: widget.toolbarLeftIcon,
     leftIconClick: widget.toolbarLeftIconClick,

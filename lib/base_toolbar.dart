@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppToolbar extends StatefulWidget {
+class BaseToolbar extends StatefulWidget {
   static const String IMAGE_TYPE_IMAGE = "image";
   static const String IMAGE_TYPE_ICON = "icon";
 
@@ -20,7 +20,7 @@ class AppToolbar extends StatefulWidget {
 
   final Color backgroundColor;
 
-  AppToolbar({
+  BaseToolbar({
     this.leftIconType,
     this.leftIcon,
     this.leftIconClick,
@@ -36,10 +36,10 @@ class AppToolbar extends StatefulWidget {
   });
 
   @override
-  _AppToolbarState createState() => _AppToolbarState();
+  _BaseToolbarState createState() => _BaseToolbarState();
 }
 
-class _AppToolbarState extends State<AppToolbar> {
+class _BaseToolbarState extends State<BaseToolbar> {
   ThemeData themeData;
 
   @override
@@ -78,13 +78,13 @@ class _AppToolbarState extends State<AppToolbar> {
   }
 
   Widget getLeftIcon(leftIconType, leftIcon) {
-    if (leftIconType == AppToolbar.IMAGE_TYPE_IMAGE) {
+    if (leftIconType == BaseToolbar.IMAGE_TYPE_IMAGE) {
       return Image.asset(
         leftIcon,
         height: 30,
         width: 30,
       );
-    } else if (leftIconType == AppToolbar.IMAGE_TYPE_ICON) {
+    } else if (leftIconType == BaseToolbar.IMAGE_TYPE_ICON) {
       return Icon(
         leftIcon,
         color: themeData.primaryColor,
@@ -150,13 +150,13 @@ class _AppToolbarState extends State<AppToolbar> {
   }
 
   Widget getRightIcon(rightIconType, rightIcon) {
-    if (rightIconType == AppToolbar.IMAGE_TYPE_IMAGE) {
+    if (rightIconType == BaseToolbar.IMAGE_TYPE_IMAGE) {
       return Image.asset(
         rightIcon,
         height: 30,
         width: 30,
       );
-    } else if (rightIconType == AppToolbar.IMAGE_TYPE_ICON) {
+    } else if (rightIconType == BaseToolbar.IMAGE_TYPE_ICON) {
       return Icon(
         rightIcon,
         color: themeData.primaryColor,

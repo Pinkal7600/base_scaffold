@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Rename file from app_toolbar to base_toolbar.
+
 ## 1.0.1
 
 * Change description.
