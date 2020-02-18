@@ -1,3 +1,7 @@
+## 1.0.4
+
+* Demo gif added to readme.
+
 ## 1.0.3
 
 * Added new example with use case of toolbar, screen loader and on screen loader.
