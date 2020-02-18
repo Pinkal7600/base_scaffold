@@ -1,5 +1,7 @@
 # base_scaffold
 
+[![pub package](https://img.shields.io/pub/v/base_scaffold.svg)](https://pub.dev/packages/base_scaffold)
+
 A Flutter package for base **scaffold**. After importing this plugin to your project as usual, import base_scaffold.dart and use the BaseScaffold() for ready feature like toolbar, loaderView and etc...
 
 ## Demo (example/base_scaffold_demo)
