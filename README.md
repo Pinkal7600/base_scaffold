@@ -3,7 +3,7 @@
 A Flutter package for base **scaffold**. After importing this plugin to your project as usual, import base_scaffold.dart and use the BaseScaffold() for ready feature like toolbar, loaderView and etc...
 
 ## Demo (example/base_scaffold_demo)
-![Alt Text](example/demo.gif)
+<img src="example/demo.gif" height="400" />
 
 After importing this plugin to your project as usual, import below to
 use base_scaffold.
