@@ -1,3 +1,9 @@
+## 1.0.3
+
+* Added new example with use case of toolbar, screen loader and on screen loader.
+* Resolve issue regarding null body.
+* Added TextStyle for toolbar related text.
+
 ## 1.0.2
 
 * Rename file from app_toolbar to base_toolbar.

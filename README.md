@@ -2,6 +2,12 @@
 
 A Flutter package for base **scaffold**. After importing this plugin to your project as usual, import base_scaffold.dart and use the BaseScaffold() for ready feature like toolbar, loaderView and etc...
 
+## Demo (example/base_scaffold_demo)
+![Alt Text](example/demo.gif)
+
+After importing this plugin to your project as usual, import below to
+use base_scaffold.
+
 ## Getting Started
 
 After importing this plugin to your project as usual, import below to
@@ -52,6 +58,11 @@ These are below available properties in this package.
 | toolbarLeftText | String | Set some text to left instead of icon. |
 | toolbarLeftTextClick | Function | Get callback click of left text. |
 | toolbarBackgroundColor | Color | Set toolbar background color. |
+| toolbarHeight | Color | Set toolbar background color. |
+| toolbarHeight | double | Set custom toolbar height as per requirement. Minimum height should be 50. |
+| toolbarLeftTextStyle | TextStyle | Set custom text style for left toolbar text. |
+| toolbarTitleTextStyle | TextStyle | Set custom text style for title toolbar text. |
+| toolbarRightTextStyle | TextStyle | Set custom text style for right toolbar text. |
 | isScreenLoading | bool | Set bool to show/hide loader view or entire screen body. |
 | isScreenLoadingWithBackground | bool | Set bool to show/hide loader view on screen body. |
 | screenLoaderView | Widget | Set custom widget for in screen loader view. |

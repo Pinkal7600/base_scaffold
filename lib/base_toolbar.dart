@@ -20,6 +20,11 @@ class BaseToolbar extends StatefulWidget {
 
   final Color backgroundColor;
 
+  final double toolbarHeight;
+  final TextStyle leftTextStyle;
+  final TextStyle titleTextStyle;
+  final TextStyle rightTextStyle;
+
   BaseToolbar({
     this.leftIconType,
     this.leftIcon,
@@ -33,7 +38,11 @@ class BaseToolbar extends StatefulWidget {
     this.leftText,
     this.leftTextClick,
     this.backgroundColor = Colors.white,
-  });
+    this.toolbarHeight = 60,
+    this.leftTextStyle,
+    this.titleTextStyle,
+    this.rightTextStyle,
+  }) : assert(toolbarHeight > 50);
 
   @override
   _BaseToolbarState createState() => _BaseToolbarState();
@@ -47,7 +56,7 @@ class _BaseToolbarState extends State<BaseToolbar> {
     themeData = Theme.of(context);
     return Container(
       color: widget.backgroundColor,
-      height: 60,
+      height: widget.toolbarHeight,
       child: Row(
         children: <Widget>[
           Expanded(
@@ -99,14 +108,15 @@ class _BaseToolbarState extends State<BaseToolbar> {
       child: leftText == null || leftText.isEmpty
           ? Container()
           : GestureDetector(
-        onTap: leftTextClick,
-        child: Text(
-          leftText,
-          style: themeData.textTheme.subtitle
-              .copyWith(color: themeData.primaryColor),
-          textAlign: TextAlign.center,
-        ),
-      ),
+              onTap: leftTextClick,
+              child: Text(
+                leftText,
+                style: widget.leftTextStyle ??
+                    themeData.textTheme.subtitle
+                        .copyWith(color: themeData.primaryColor),
+                textAlign: TextAlign.center,
+              ),
+            ),
     );
   }
 
@@ -115,11 +125,12 @@ class _BaseToolbarState extends State<BaseToolbar> {
       child: title == null || title.isEmpty
           ? Container()
           : Text(
-        title,
-        style: themeData.textTheme.title
-            .copyWith(color: Colors.black, fontWeight: FontWeight.w600),
-        textAlign: TextAlign.center,
-      ),
+              title,
+              style: widget.titleTextStyle ??
+                  themeData.textTheme.title.copyWith(
+                      color: Colors.black, fontWeight: FontWeight.w600),
+              textAlign: TextAlign.center,
+            ),
     );
   }
 
@@ -128,14 +139,15 @@ class _BaseToolbarState extends State<BaseToolbar> {
       child: rightText == null || rightText.isEmpty
           ? Container()
           : GestureDetector(
-        onTap: rightTextClick,
-        child: Text(
-          rightText,
-          style: themeData.textTheme.subtitle
-              .copyWith(color: themeData.primaryColor),
-          textAlign: TextAlign.center,
-        ),
-      ),
+              onTap: rightTextClick,
+              child: Text(
+                rightText,
+                style: widget.rightTextStyle ??
+                    themeData.textTheme.subtitle
+                        .copyWith(color: themeData.primaryColor),
+                textAlign: TextAlign.center,
+              ),
+            ),
     );
   }
 

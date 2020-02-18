@@ -29,6 +29,10 @@ class BaseScaffold extends StatefulWidget {
   final Function toolbarRightTextClick;
   final String toolbarLeftText;
   final Function toolbarLeftTextClick;
+  final double toolbarHeight;
+  final TextStyle toolbarLeftTextStyle;
+  final TextStyle toolbarTitleTextStyle;
+  final TextStyle toolbarRightTextStyle;
 
   BaseScaffold({
     this.body,
@@ -47,12 +51,16 @@ class BaseScaffold extends StatefulWidget {
     this.toolbarRightTextClick,
     this.toolbarLeftText,
     this.toolbarLeftTextClick,
+    this.toolbarHeight = 60,
     this.screenLoaderView,
     this.backgroundScreenLoaderView,
     this.bodyBackgroundColor = Colors.white,
     this.scaffoldBackgroundColor = Colors.white,
     this.toolbarBackgroundColor = Colors.white,
-  });
+    this.toolbarLeftTextStyle,
+    this.toolbarTitleTextStyle,
+    this.toolbarRightTextStyle,
+  }) : assert(toolbarHeight > 50);
 
   @override
   _BaseScaffoldState createState() => _BaseScaffoldState();
@@ -79,13 +87,13 @@ class _BaseScaffoldState extends State<BaseScaffold> {
             child: widget.isScreenLoading
                 ? loadingView()
                 : Stack(
-              children: <Widget>[
-                widget.body,
-                widget.isScreenLoadingWithBackground
-                    ? loadingViewWithBackground()
-                    : Container(),
-              ],
-            ),
+                    children: <Widget>[
+                      widget.body ?? Container(),
+                      widget.isScreenLoadingWithBackground
+                          ? loadingViewWithBackground()
+                          : Container(),
+                    ],
+                  ),
           ),
         ),
       ],
@@ -95,30 +103,34 @@ class _BaseScaffoldState extends State<BaseScaffold> {
   Widget toolbar() => widget.toolbar != null
       ? widget.toolbar
       : widget.showToolbar
-      ? BaseToolbar(
-    leftIconType: widget.toolbarLeftIconType,
-    leftIcon: widget.toolbarLeftIcon,
-    leftIconClick: widget.toolbarLeftIconClick,
-    rightIcon: widget.toolbarRightIcon,
-    rightIconType: widget.toolbarRightIconType,
-    rightIconClick: widget.toolbarRightIconClick,
-    title: widget.toolbarTitle,
-    rightText: widget.toolbarRightText,
-    rightTextClick: widget.toolbarRightTextClick,
-    leftText: widget.toolbarLeftText,
-    leftTextClick: widget.toolbarLeftTextClick,
-    backgroundColor: widget.toolbarBackgroundColor,
-  )
-      : Container();
+          ? BaseToolbar(
+              leftIconType: widget.toolbarLeftIconType,
+              leftIcon: widget.toolbarLeftIcon,
+              leftIconClick: widget.toolbarLeftIconClick,
+              rightIcon: widget.toolbarRightIcon,
+              rightIconType: widget.toolbarRightIconType,
+              rightIconClick: widget.toolbarRightIconClick,
+              title: widget.toolbarTitle,
+              rightText: widget.toolbarRightText,
+              rightTextClick: widget.toolbarRightTextClick,
+              leftText: widget.toolbarLeftText,
+              leftTextClick: widget.toolbarLeftTextClick,
+              backgroundColor: widget.toolbarBackgroundColor,
+              toolbarHeight: widget.toolbarHeight,
+              leftTextStyle: widget.toolbarLeftTextStyle,
+              titleTextStyle: widget.toolbarTitleTextStyle,
+              rightTextStyle: widget.toolbarRightTextStyle,
+            )
+          : Container();
 
   Widget loadingView() {
     return Center(
       child: widget.screenLoaderView != null
           ? widget.screenLoaderView
           : CupertinoActivityIndicator(
-        animating: true,
-        radius: 15,
-      ),
+              animating: true,
+              radius: 15,
+            ),
     );
   }
 
