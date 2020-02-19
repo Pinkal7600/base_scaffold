@@ -1,3 +1,7 @@
+## 1.0.5
+
+* URL fix to Demo gif in readme.
+
 ## 1.0.4
 
 * Demo gif added to readme.
