@@ -24,7 +24,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
-  base_scaffold: ^1.0.3
+  base_scaffold: ^1.0.6
 
 
 dev_dependencies:

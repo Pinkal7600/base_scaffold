@@ -7,9 +7,6 @@ A Flutter package for base **scaffold**. After importing this plugin to your pro
 ## Demo (example/base_scaffold_demo)
 <img src="https://raw.githubusercontent.com/Pinkal7600/base_scaffold/master/example/demo.gif" height="400" />
 
-After importing this plugin to your project as usual, import below to
-use base_scaffold.
-
 ## Getting Started
 
 After importing this plugin to your project as usual, import below to
@@ -60,7 +57,6 @@ These are below available properties in this package.
 | toolbarLeftText | String | Set some text to left instead of icon. |
 | toolbarLeftTextClick | Function | Get callback click of left text. |
 | toolbarBackgroundColor | Color | Set toolbar background color. |
-| toolbarHeight | Color | Set toolbar background color. |
 | toolbarHeight | double | Set custom toolbar height as per requirement. Minimum height should be 50. |
 | toolbarLeftTextStyle | TextStyle | Set custom text style for left toolbar text. |
 | toolbarTitleTextStyle | TextStyle | Set custom text style for title toolbar text. |
