@@ -128,7 +128,7 @@ class _BaseToolbarState extends State<BaseToolbar> {
               title,
               style: widget.titleTextStyle ??
                   themeData.textTheme.title.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.w600),
+                      color: Colors.black, fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
             ),
     );

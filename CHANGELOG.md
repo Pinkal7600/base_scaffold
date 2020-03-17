@@ -1,3 +1,7 @@
+## 1.0.7
+
+* Minor Changes.
+
 ## 1.0.6
 
 * Added readme in example demo.

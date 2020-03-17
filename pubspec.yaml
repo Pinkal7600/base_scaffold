@@ -1,10 +1,10 @@
 name: base_scaffold
 description: A Flutter package for base scaffold. After importing this plugin to your project as usual, import base_scaffold.dart to use package.
 homepage: https://github.com/Pinkal7600/base_scaffold
-authors:
-  - Pinkal Patel <pinkaljpael1995@gmail.com>
+#authors:
+#  - Pinkal Patel <pinkaljpael1995@gmail.com>
 
-version: 1.0.6
+version: 1.0.7
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
