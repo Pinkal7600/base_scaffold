@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -39,6 +40,24 @@ class BaseScaffold extends StatefulWidget {
   final Widget toolbarCenterChild;
   final Widget toolbarRightChild;
 
+  // Scaffold
+  final bool extendBody;
+  final bool extendBodyBehindAppBar;
+  final Widget floatingActionButton;
+  final FloatingActionButtonLocation floatingActionButtonLocation;
+  final FloatingActionButtonAnimator floatingActionButtonAnimator;
+  final List<Widget> persistentFooterButtons;
+  final Widget drawer;
+  final Widget endDrawer;
+  final Color drawerScrimColor;
+  final Widget bottomNavigationBar;
+  final Widget bottomSheet;
+  final bool resizeToAvoidBottomPadding;
+  final bool resizeToAvoidBottomInset;
+  final bool primary;
+  final DragStartBehavior drawerDragStartBehavior;
+  final double drawerEdgeDragWidth;
+
   BaseScaffold({
     this.body,
     this.toolbar,
@@ -70,6 +89,22 @@ class BaseScaffold extends StatefulWidget {
     this.toolbarLeftTextStyle,
     this.toolbarTitleTextStyle,
     this.toolbarRightTextStyle,
+    this.floatingActionButton,
+    this.floatingActionButtonLocation,
+    this.floatingActionButtonAnimator,
+    this.persistentFooterButtons,
+    this.drawer,
+    this.endDrawer,
+    this.bottomNavigationBar,
+    this.bottomSheet,
+    this.resizeToAvoidBottomPadding,
+    this.resizeToAvoidBottomInset,
+    this.primary = true,
+    this.drawerDragStartBehavior = DragStartBehavior.start,
+    this.extendBody = false,
+    this.extendBodyBehindAppBar = false,
+    this.drawerScrimColor,
+    this.drawerEdgeDragWidth,
   }) : assert(toolbarHeight > 50);
 
   @override
@@ -84,6 +119,22 @@ class _BaseScaffoldState extends State<BaseScaffold> {
       body: SafeArea(
         child: scaffoldBody(),
       ),
+      floatingActionButton: widget.floatingActionButton,
+      floatingActionButtonLocation: widget.floatingActionButtonLocation,
+      floatingActionButtonAnimator: widget.floatingActionButtonAnimator,
+      persistentFooterButtons: widget.persistentFooterButtons,
+      drawer: widget.drawer,
+      endDrawer: widget.endDrawer,
+      bottomNavigationBar: widget.bottomNavigationBar,
+      bottomSheet: widget.bottomSheet,
+      resizeToAvoidBottomPadding: widget.resizeToAvoidBottomPadding,
+      resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
+      primary: widget.primary,
+      drawerDragStartBehavior: widget.drawerDragStartBehavior,
+      extendBody: widget.extendBody,
+      extendBodyBehindAppBar: widget.extendBodyBehindAppBar,
+      drawerScrimColor: widget.drawerScrimColor,
+      drawerEdgeDragWidth: widget.drawerEdgeDragWidth,
     );
   }
 
