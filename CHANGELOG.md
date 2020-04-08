@@ -1,3 +1,15 @@
+## 1.1.0
+
+* Readme update.
+
+## 1.0.9
+
+* Issue fixed.
+
+## 1.0.8
+
+* Set custom widget child to left, right and center of toolbar.
+
 ## 1.0.7
 
 * Minor Changes.

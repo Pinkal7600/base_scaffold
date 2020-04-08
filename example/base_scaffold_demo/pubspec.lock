@@ -28,7 +28,7 @@ packages:
       name: base_scaffold
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.6"
+    version: "1.0.9"
   boolean_selector:
     dependency: transitive
     description:

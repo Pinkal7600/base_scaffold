@@ -33,6 +33,11 @@ class BaseScaffold extends StatefulWidget {
   final TextStyle toolbarLeftTextStyle;
   final TextStyle toolbarTitleTextStyle;
   final TextStyle toolbarRightTextStyle;
+  final Color toolbarLeftIconColor;
+  final Color toolbarRightIconColor;
+  final Widget toolbarLeftChild;
+  final Widget toolbarCenterChild;
+  final Widget toolbarRightChild;
 
   BaseScaffold({
     this.body,
@@ -41,9 +46,11 @@ class BaseScaffold extends StatefulWidget {
     this.isScreenLoadingWithBackground = false,
     this.showToolbar = true,
     this.toolbarLeftIcon,
+    this.toolbarLeftIconColor,
     this.toolbarLeftIconType,
     this.toolbarLeftIconClick,
     this.toolbarRightIcon,
+    this.toolbarRightIconColor,
     this.toolbarRightIconType,
     this.toolbarRightIconClick,
     this.toolbarTitle,
@@ -52,6 +59,9 @@ class BaseScaffold extends StatefulWidget {
     this.toolbarLeftText,
     this.toolbarLeftTextClick,
     this.toolbarHeight = 60,
+    this.toolbarLeftChild,
+    this.toolbarCenterChild,
+    this.toolbarRightChild,
     this.screenLoaderView,
     this.backgroundScreenLoaderView,
     this.bodyBackgroundColor = Colors.white,
@@ -120,6 +130,11 @@ class _BaseScaffoldState extends State<BaseScaffold> {
               leftTextStyle: widget.toolbarLeftTextStyle,
               titleTextStyle: widget.toolbarTitleTextStyle,
               rightTextStyle: widget.toolbarRightTextStyle,
+              leftIconColor: widget.toolbarLeftIconColor,
+              rightIconColor: widget.toolbarRightIconColor,
+              leftChild: widget.toolbarLeftChild,
+              centerChild: widget.toolbarCenterChild,
+              rightChild: widget.toolbarRightChild,
             )
           : Container();
 

@@ -38,7 +38,7 @@ import 'package:base_scaffold/base_scaffold.dart';
 ```
 
 ## Properties:
-These are below available properties in this package.
+These are below available properties for base_scaffold.
 
 | Properties | type | details |
 |--------|-----|-----|
@@ -68,3 +68,4 @@ These are below available properties in this package.
 | scaffoldBackgroundColor | Color | Set scaffold background color. |
 | bodyBackgroundColor | Color | Set body background color. |
 
+**Note** : For more base_scaffold properties and details please check here : https://pub.dev/documentation/base_scaffold/latest/base_scaffold/BaseScaffold-class.html

@@ -19,17 +19,25 @@ class BaseToolbar extends StatefulWidget {
   final Function leftTextClick;
 
   final Color backgroundColor;
+  final Color rightIconColor;
+  final Color leftIconColor;
 
   final double toolbarHeight;
   final TextStyle leftTextStyle;
   final TextStyle titleTextStyle;
   final TextStyle rightTextStyle;
 
+  final Widget leftChild;
+  final Widget centerChild;
+  final Widget rightChild;
+
   BaseToolbar({
     this.leftIconType,
     this.leftIcon,
+    this.leftIconColor,
     this.leftIconClick,
     this.rightIcon,
+    this.rightIconColor,
     this.rightIconType,
     this.rightIconClick,
     this.title,
@@ -42,6 +50,9 @@ class BaseToolbar extends StatefulWidget {
     this.leftTextStyle,
     this.titleTextStyle,
     this.rightTextStyle,
+    this.leftChild,
+    this.centerChild,
+    this.rightChild,
   }) : assert(toolbarHeight > 50);
 
   @override
@@ -61,16 +72,24 @@ class _BaseToolbarState extends State<BaseToolbar> {
         children: <Widget>[
           Expanded(
               flex: 1,
-              child: widget.leftIcon != null
-                  ? leftIconWidget(widget.leftIconClick)
-                  : leftTextTitle(widget.leftText, widget.leftTextClick)),
-          Expanded(flex: 4, child: centerText(widget.title)),
+              child: widget.leftChild != null
+                  ? widget.leftChild
+                  : widget.leftIcon != null
+                      ? leftIconWidget(widget.leftIconClick)
+                      : leftTextTitle(widget.leftText, widget.leftTextClick)),
+          Expanded(
+              flex: 4,
+              child: widget.centerChild != null
+                  ? widget.centerChild
+                  : centerText(widget.title)),
           Expanded(
               flex: 1,
-              child: widget.rightIcon != null
-                  ? rightIconWidget(widget.rightIconClick)
-                  : rightTextTitle(widget.rightText, widget.rightTextClick)),
-//        leftIconWidget(leftIconClick),
+              child: widget.rightChild != null
+                  ? widget.rightChild
+                  : widget.rightIcon != null
+                      ? rightIconWidget(widget.rightIconClick)
+                      : rightTextTitle(
+                          widget.rightText, widget.rightTextClick)),
         ],
       ),
     );
@@ -81,22 +100,24 @@ class _BaseToolbarState extends State<BaseToolbar> {
       onTap: leftIconClick,
       child: Padding(
         padding: EdgeInsets.all(15),
-        child: getLeftIcon(widget.leftIconType, widget.leftIcon),
+        child: getLeftIcon(
+            widget.leftIconType, widget.leftIcon, widget.leftIconColor),
       ),
     );
   }
 
-  Widget getLeftIcon(leftIconType, leftIcon) {
+  Widget getLeftIcon(leftIconType, leftIcon, leftIconColor) {
     if (leftIconType == BaseToolbar.IMAGE_TYPE_IMAGE) {
       return Image.asset(
         leftIcon,
+        color: leftIconColor ?? themeData.primaryColor,
         height: 30,
         width: 30,
       );
     } else if (leftIconType == BaseToolbar.IMAGE_TYPE_ICON) {
       return Icon(
         leftIcon,
-        color: themeData.primaryColor,
+        color: leftIconColor ?? themeData.primaryColor,
       );
     } else {
       return Container();
@@ -156,22 +177,24 @@ class _BaseToolbarState extends State<BaseToolbar> {
       onTap: rightIconClick,
       child: Padding(
         padding: EdgeInsets.all(15),
-        child: getRightIcon(widget.rightIconType, widget.rightIcon),
+        child: getRightIcon(
+            widget.rightIconType, widget.rightIcon, widget.rightIconColor),
       ),
     );
   }
 
-  Widget getRightIcon(rightIconType, rightIcon) {
+  Widget getRightIcon(rightIconType, rightIcon, rightIconColor) {
     if (rightIconType == BaseToolbar.IMAGE_TYPE_IMAGE) {
       return Image.asset(
         rightIcon,
+        color: rightIconColor ?? themeData.primaryColor,
         height: 30,
         width: 30,
       );
     } else if (rightIconType == BaseToolbar.IMAGE_TYPE_ICON) {
       return Icon(
         rightIcon,
-        color: themeData.primaryColor,
+        color: rightIconColor ?? themeData.primaryColor,
       );
     } else {
       return Container();
