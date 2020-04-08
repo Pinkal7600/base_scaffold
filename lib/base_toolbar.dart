@@ -110,7 +110,6 @@ class _BaseToolbarState extends State<BaseToolbar> {
     if (leftIconType == BaseToolbar.IMAGE_TYPE_IMAGE) {
       return Image.asset(
         leftIcon,
-        color: leftIconColor ?? themeData.primaryColor,
         height: 30,
         width: 30,
       );
@@ -187,7 +186,6 @@ class _BaseToolbarState extends State<BaseToolbar> {
     if (rightIconType == BaseToolbar.IMAGE_TYPE_IMAGE) {
       return Image.asset(
         rightIcon,
-        color: rightIconColor ?? themeData.primaryColor,
         height: 30,
         width: 30,
       );

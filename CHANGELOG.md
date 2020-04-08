@@ -1,3 +1,7 @@
+## 1.1.2
+
+* Minor fixes.
+
 ## 1.1.1
 
 * Support all scaffold properties in base_scaffold.
