@@ -1,3 +1,7 @@
+## 1.1.4
+
+* Bug fixed.
+
 ## 1.1.3
 
 * Added comment on all properties in base_scaffold and base_toolbar.

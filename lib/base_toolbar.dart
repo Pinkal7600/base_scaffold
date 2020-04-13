@@ -114,7 +114,16 @@ class BaseToolbar extends StatefulWidget {
     this.centerChild,
     this.rightChild,
   })  : assert(toolbarHeight > 50),
-        assert(leftIcon is String || leftIcon is IconData);
+        assert(
+            leftIcon != null
+                ? leftIcon is String || leftIcon is IconData
+                : true,
+            "Please provide icon type in string(assets or local path) or IconData."),
+        assert(
+            rightIcon != null
+                ? rightIcon is String || rightIcon is IconData
+                : true,
+            "Please provide icon type in string(assets or local path) or IconData.");
 
   @override
   _BaseToolbarState createState() => _BaseToolbarState();
