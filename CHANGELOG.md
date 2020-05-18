@@ -1,3 +1,7 @@
+## 1.1.5
+
+* Bug fixed for New Flutter 1.17.0
+
 ## 1.1.4
 
 * Bug fixed.

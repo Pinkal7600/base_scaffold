@@ -202,7 +202,7 @@ class _BaseToolbarState extends State<BaseToolbar> {
               child: Text(
                 leftText,
                 style: widget.leftTextStyle ??
-                    themeData.textTheme.subtitle
+                    themeData.textTheme.subtitle2
                         .copyWith(color: themeData.primaryColor),
                 textAlign: TextAlign.center,
               ),
@@ -217,7 +217,7 @@ class _BaseToolbarState extends State<BaseToolbar> {
           : Text(
               title,
               style: widget.titleTextStyle ??
-                  themeData.textTheme.title.copyWith(
+                  themeData.textTheme.headline6.copyWith(
                       color: Colors.black, fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
             ),
@@ -233,7 +233,7 @@ class _BaseToolbarState extends State<BaseToolbar> {
               child: Text(
                 rightText,
                 style: widget.rightTextStyle ??
-                    themeData.textTheme.subtitle
+                    themeData.textTheme.subtitle2
                         .copyWith(color: themeData.primaryColor),
                 textAlign: TextAlign.center,
               ),
