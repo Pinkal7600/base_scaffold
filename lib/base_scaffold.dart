@@ -8,17 +8,17 @@ import 'base_toolbar.dart';
 class BaseScaffold extends StatefulWidget {
   /// It contains the body of the screen which will be display in safe area
   /// and between toolbar and bottom navigation bar.
-  final Widget body;
+  final Widget? body;
 
   /// Design your own custom toolbar.
-  final Widget toolbar;
+  final Widget? toolbar;
 
   /// Design custom widget for loader view where body will display empty.
-  final Widget screenLoaderView;
+  final Widget? screenLoaderView;
 
   /// Design custom widget for loader view which will display with
   /// body content.
-  final Widget backgroundScreenLoaderView;
+  final Widget? backgroundScreenLoaderView;
 
   /// Set true to show loading.
   /// @Note: This will hide the body and display empty screen.
@@ -55,11 +55,11 @@ class BaseScaffold extends StatefulWidget {
   ///
   /// @Note: If you not provide any type to left icon then left icon will
   /// not display in toolbar.
-  final String toolbarLeftIconType;
+  final String? toolbarLeftIconType;
 
   /// Set left icon click event if you have used [toolbarLeftIcon] &
   /// [toolbarLeftIconType].
-  final Function toolbarLeftIconClick;
+  final Function? toolbarLeftIconClick;
 
   /// Set icon on right side of the toolbar.
   /// Icon can be an [String] value if you use an assets
@@ -74,56 +74,56 @@ class BaseScaffold extends StatefulWidget {
   ///
   /// @Note: If you not provide any type to right icon then right icon will
   /// not display in toolbar.
-  final String toolbarRightIconType;
+  final String? toolbarRightIconType;
 
   /// Set right icon click event if you have used [toolbarRightIcon] &
   /// [toolbarRightIconType].
-  final Function toolbarRightIconClick;
+  final Function? toolbarRightIconClick;
 
   /// Set title on toolbar.
-  final String toolbarTitle;
+  final String? toolbarTitle;
 
   /// Set text at right side of toolbar.
-  final String toolbarRightText;
+  final String? toolbarRightText;
 
   /// Set click event of right side text.
   /// @Note: It will not work if [toolbarRightText] is empty or not set.
-  final Function toolbarRightTextClick;
+  final Function? toolbarRightTextClick;
 
   /// Set text at left side of toolbar.
-  final String toolbarLeftText;
+  final String? toolbarLeftText;
 
   /// Set click event of left side text.
   /// @Note: It will not work if [toolbarLeftText] is empty or not set.
-  final Function toolbarLeftTextClick;
+  final Function? toolbarLeftTextClick;
 
   /// Manage height of toolbar.
   /// By default it height is [60] and it can not be less than [50].
   final double toolbarHeight;
 
   /// Set custom text style of left text in toolbar.
-  final TextStyle toolbarLeftTextStyle;
+  final TextStyle? toolbarLeftTextStyle;
 
   /// Set custom text style of title text in toolbar.
-  final TextStyle toolbarTitleTextStyle;
+  final TextStyle? toolbarTitleTextStyle;
 
   /// Set custom text style of right text in toolbar.
-  final TextStyle toolbarRightTextStyle;
+  final TextStyle? toolbarRightTextStyle;
 
   /// Use to set only color of left icon.
-  final Color toolbarLeftIconColor;
+  final Color? toolbarLeftIconColor;
 
   /// Use to set only color of right icon.
-  final Color toolbarRightIconColor;
+  final Color? toolbarRightIconColor;
 
   /// Make custom widget to set at left side of toolbar.
-  final Widget toolbarLeftChild;
+  final Widget? toolbarLeftChild;
 
   /// Make custom widget to set at center of toolbar.
-  final Widget toolbarCenterChild;
+  final Widget? toolbarCenterChild;
 
   /// Make custom widget to set at right side of toolbar.
-  final Widget toolbarRightChild;
+  final Widget? toolbarRightChild;
 
   // Scaffold
   /// Default properties of [Scaffold]
@@ -133,34 +133,34 @@ class BaseScaffold extends StatefulWidget {
   final bool extendBodyBehindAppBar;
 
   /// Default properties of [Scaffold]
-  final Widget floatingActionButton;
+  final Widget? floatingActionButton;
 
   /// Default properties of [Scaffold]
-  final FloatingActionButtonLocation floatingActionButtonLocation;
+  final FloatingActionButtonLocation? floatingActionButtonLocation;
 
   /// Default properties of [Scaffold]
-  final FloatingActionButtonAnimator floatingActionButtonAnimator;
+  final FloatingActionButtonAnimator? floatingActionButtonAnimator;
 
   /// Default properties of [Scaffold]
-  final List<Widget> persistentFooterButtons;
+  final List<Widget>? persistentFooterButtons;
 
   /// Default properties of [Scaffold]
-  final Widget drawer;
+  final Widget? drawer;
 
   /// Default properties of [Scaffold]
-  final Widget endDrawer;
+  final Widget? endDrawer;
 
   /// Default properties of [Scaffold]
-  final Color drawerScrimColor;
+  final Color? drawerScrimColor;
 
   /// Default properties of [Scaffold]
-  final Widget bottomNavigationBar;
+  final Widget? bottomNavigationBar;
 
   /// Default properties of [Scaffold]
-  final Widget bottomSheet;
+  final Widget? bottomSheet;
 
   /// Default properties of [Scaffold]
-  final bool resizeToAvoidBottomInset;
+  final bool? resizeToAvoidBottomInset;
 
   /// Default properties of [Scaffold]
   final bool primary;
@@ -169,7 +169,7 @@ class BaseScaffold extends StatefulWidget {
   final DragStartBehavior drawerDragStartBehavior;
 
   /// Default properties of [Scaffold]
-  final double drawerEdgeDragWidth;
+  final double? drawerEdgeDragWidth;
 
   /// Default properties of [Scaffold]
 
@@ -275,7 +275,7 @@ class _BaseScaffoldState extends State<BaseScaffold> {
   }
 
   Widget toolbar() => widget.toolbar != null
-      ? widget.toolbar
+      ? widget.toolbar!
       : widget.showToolbar
           ? BaseToolbar(
               leftIconType: widget.toolbarLeftIconType,

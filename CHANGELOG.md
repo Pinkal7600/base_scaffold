@@ -1,3 +1,7 @@
+## 1.2.1
+
+* Null safety
+
 ## 1.2.0
 
 * Flutter 2.0 support

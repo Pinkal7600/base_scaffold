@@ -18,11 +18,11 @@ class BaseToolbar extends StatefulWidget {
   ///
   /// @Note: If you not provide any type to left icon then left icon will
   /// not display in toolbar.
-  final String leftIconType;
+  final String? leftIconType;
 
   /// Set left icon click event if you have used [leftIcon] &
   /// [leftIconType].
-  final Function leftIconClick;
+  final Function? leftIconClick;
 
   /// Set icon on right side of the toolbar.
   /// Icon can be an [String] value if you use an assets
@@ -37,56 +37,56 @@ class BaseToolbar extends StatefulWidget {
   ///
   /// @Note: If you not provide any type to right icon then right icon will
   /// not display in toolbar.
-  final String rightIconType;
+  final String? rightIconType;
 
   /// Set right icon click event if you have used [rightIcon] &
   /// [rightIconType].
-  final Function rightIconClick;
+  final Function? rightIconClick;
 
   /// Set title on toolbar.
-  final String title;
+  final String? title;
 
   /// Set text at right side of toolbar.
-  final String rightText;
+  final String? rightText;
 
   /// Set click event of right side text.
   /// @Note: It will not work if [rightText] is empty or not set.
-  final Function rightTextClick;
+  final Function? rightTextClick;
 
   /// Set text at left side of toolbar.
-  final String leftText;
+  final String? leftText;
 
   /// Set click event of left side text.
   /// @Note: It will not work if [leftText] is empty or not set.
-  final Function leftTextClick;
+  final Function? leftTextClick;
 
   /// Manage height of toolbar.
   /// By default it height is [60] and it can not be less than [50].
   final double toolbarHeight;
 
   /// Set custom text style of left text in toolbar.
-  final TextStyle leftTextStyle;
+  final TextStyle? leftTextStyle;
 
   /// Set custom text style of title text in toolbar.
-  final TextStyle titleTextStyle;
+  final TextStyle? titleTextStyle;
 
   /// Set custom text style of right text in toolbar.
-  final TextStyle rightTextStyle;
+  final TextStyle? rightTextStyle;
 
   /// Use to set only color of left icon.
-  final Color leftIconColor;
+  final Color? leftIconColor;
 
   /// Use to set only color of right icon.
-  final Color rightIconColor;
+  final Color? rightIconColor;
 
   /// Make custom widget to set at left side of toolbar.
-  final Widget leftChild;
+  final Widget? leftChild;
 
   /// Make custom widget to set at center of toolbar.
-  final Widget centerChild;
+  final Widget? centerChild;
 
   /// Make custom widget to set at right side of toolbar.
-  final Widget rightChild;
+  final Widget? rightChild;
 
   /// Set toolbar background color.
   final Color backgroundColor;
@@ -130,7 +130,7 @@ class BaseToolbar extends StatefulWidget {
 }
 
 class _BaseToolbarState extends State<BaseToolbar> {
-  ThemeData themeData;
+  ThemeData? themeData;
 
   @override
   Widget build(BuildContext context) {
@@ -142,24 +142,24 @@ class _BaseToolbarState extends State<BaseToolbar> {
         children: <Widget>[
           Expanded(
               flex: 1,
-              child: widget.leftChild != null
+              child: (widget.leftChild != null
                   ? widget.leftChild
                   : widget.leftIcon != null
                       ? leftIconWidget(widget.leftIconClick)
-                      : leftTextTitle(widget.leftText, widget.leftTextClick)),
+                      : leftTextTitle(widget.leftText!, widget.leftTextClick))!),
           Expanded(
               flex: 4,
-              child: widget.centerChild != null
+              child: (widget.centerChild != null
                   ? widget.centerChild
-                  : centerText(widget.title)),
+                  : centerText(widget.title!))!),
           Expanded(
               flex: 1,
-              child: widget.rightChild != null
+              child: (widget.rightChild != null
                   ? widget.rightChild
                   : widget.rightIcon != null
                       ? rightIconWidget(widget.rightIconClick)
                       : rightTextTitle(
-                          widget.rightText, widget.rightTextClick)),
+                          widget.rightText!, widget.rightTextClick))!),
         ],
       ),
     );
@@ -186,7 +186,7 @@ class _BaseToolbarState extends State<BaseToolbar> {
     } else if (leftIconType == BaseToolbar.IMAGE_TYPE_ICON) {
       return Icon(
         leftIcon,
-        color: leftIconColor ?? themeData.primaryColor,
+        color: leftIconColor ?? themeData!.primaryColor,
       );
     } else {
       return Container();
@@ -202,8 +202,8 @@ class _BaseToolbarState extends State<BaseToolbar> {
               child: Text(
                 leftText,
                 style: widget.leftTextStyle ??
-                    themeData.textTheme.subtitle2
-                        .copyWith(color: themeData.primaryColor),
+                    themeData!.textTheme.subtitle2!
+                        .copyWith(color: themeData!.primaryColor),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -217,7 +217,7 @@ class _BaseToolbarState extends State<BaseToolbar> {
           : Text(
               title,
               style: widget.titleTextStyle ??
-                  themeData.textTheme.headline6.copyWith(
+                  themeData!.textTheme.headline6!.copyWith(
                       color: Colors.black, fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
             ),
@@ -233,8 +233,8 @@ class _BaseToolbarState extends State<BaseToolbar> {
               child: Text(
                 rightText,
                 style: widget.rightTextStyle ??
-                    themeData.textTheme.subtitle2
-                        .copyWith(color: themeData.primaryColor),
+                    themeData!.textTheme.subtitle2!
+                        .copyWith(color: themeData!.primaryColor),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -262,7 +262,7 @@ class _BaseToolbarState extends State<BaseToolbar> {
     } else if (rightIconType == BaseToolbar.IMAGE_TYPE_ICON) {
       return Icon(
         rightIcon,
-        color: rightIconColor ?? themeData.primaryColor,
+        color: rightIconColor ?? themeData!.primaryColor,
       );
     } else {
       return Container();
