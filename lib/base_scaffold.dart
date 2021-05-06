@@ -160,9 +160,6 @@ class BaseScaffold extends StatefulWidget {
   final Widget bottomSheet;
 
   /// Default properties of [Scaffold]
-  final bool resizeToAvoidBottomPadding;
-
-  /// Default properties of [Scaffold]
   final bool resizeToAvoidBottomInset;
 
   /// Default properties of [Scaffold]
@@ -215,7 +212,6 @@ class BaseScaffold extends StatefulWidget {
     this.endDrawer,
     this.bottomNavigationBar,
     this.bottomSheet,
-    this.resizeToAvoidBottomPadding,
     this.resizeToAvoidBottomInset,
     this.primary = true,
     this.drawerDragStartBehavior = DragStartBehavior.start,
@@ -245,7 +241,6 @@ class _BaseScaffoldState extends State<BaseScaffold> {
       endDrawer: widget.endDrawer,
       bottomNavigationBar: widget.bottomNavigationBar,
       bottomSheet: widget.bottomSheet,
-      resizeToAvoidBottomPadding: widget.resizeToAvoidBottomPadding,
       resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
       primary: widget.primary,
       drawerDragStartBehavior: widget.drawerDragStartBehavior,

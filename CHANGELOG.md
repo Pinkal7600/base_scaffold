@@ -1,3 +1,7 @@
+## 1.2.0
+
+* Flutter 2.0 support
+
 ## 1.1.5
 
 * Bug fixed for New Flutter 1.17.0
